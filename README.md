@@ -1,6 +1,14 @@
-# GPX File Merger with Clustering
+# GPXTrackMerger
 
-这是一个用于从 iOS 健身数据中提取 2024 年的轨迹数据，并使用 DBSCAN 聚类算法过滤轨迹点后合并成 GPX 文件的 Python 项目。
+GPXTrackMerger 是一个用于处理和合并 iOS 健身数据中的 GPX 轨迹文件的 Python 工具。它使用 Douglas-Peucker 算法来简化轨迹，并将多个 GPX 文件合并为一个单一的文件，方便查看和分析长期的运动轨迹数据。
+
+主要功能：
+- 从指定目录读取 GPX 文件
+- 使用 Douglas-Peucker 算法简化轨迹点
+- 合并多个 GPX 文件为一个文件
+- 提供处理进度和统计信息
+
+这个工具特别适合那些想要分析和可视化长期健身数据的 iOS 用户。
 
 ## 项目结构
 
