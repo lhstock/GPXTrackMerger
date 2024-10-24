@@ -34,12 +34,25 @@ GPXTrackMerger 是一个用于处理和合并 iOS 健身数据中的 GPX 轨迹�
    pip install scikit-learn
    ```
 
+## 导出 iOS 健康数据
+
+在使用 GPXTrackMerger 之前，你需要从你的 iOS 设备导出健康数据。以下是导出步骤：
+
+1. 在你的 iOS 设备上打开"健康"应用。
+2. 点击右上角的个人资料图标。
+3. 滚动到底部，点击"导出所有健康数据"。
+4. 等待导出过程完成，这可能需要几分钟时间。
+5. 选择一种方式将导出的 zip 文件传输到你的电脑（例如，通过 AirDrop 或邮件）。
+6. 在你的电脑上解压这个 zip 文件。
+7. 将解压后的 `apple_health_export` 文件夹放入项目根目录。
+
+注意：导出的数据包含你的个人健康信息，请妥善保管。
+
 ## 使用方法
 
-1. 将导出的 iOS 健身数据放入 `apple_health_export/` 目录中。
-2. 确保所有 GPX 文件位于 `apple_health_export/workout-routes/` 目录中。
-3. 打开 `apple_health_export_main.py` 并根据需要调整参数。
-4. 使用以下命令运行脚本：
+1. 确保已完成上述的 iOS 健康数据导出步骤。
+2. 打开 `apple_health_export_main.py` 并根据需要调整参数。
+3. 使用以下命令运行脚本：
 
    ```bash
    python apple_health_export_main.py
@@ -54,7 +67,7 @@ GPXTrackMerger 是一个用于处理和合并 iOS 健身数据中的 GPX 轨迹�
 ## 注意事项
 
 - 当前脚本仅处理文件名中包含“2024”的 GPX 文件。
-- 可以通过调整 `filter_points_with_dbscan` 函数中的 `eps` 和 `min_samples` 参数来优化聚类效果。
+- 可以通过调整 `douglas_peucker` 函数中的 `epsilon` 参数来优化轨迹简化效果。
 
 ## 贡献
 
